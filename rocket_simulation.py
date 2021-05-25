@@ -3,19 +3,19 @@ import os
 from random import *
 from tkinter import *
 import time
+
 size = 600
 root = Tk()
 canvas = Canvas(root, width=size, height=size)
 canvas.pack()
 
-s_angle = int(input())
-r_mass = int(input())
-f_mass = int(input())
-f_speed = int(input())
-b_speed = int(input())
-e_mass = int(input())
+s_angle = int(input()) 
+r_mass = int(input()) 
+f_mass = int(input()) 
+f_speed = int(input()) 
+b_speed = int(input()) 
 e_mass = 6 * (10 ** 24)
-d_t = 0.03
+d_t = 0.09
 x = 0
 y = 0
 G = 6.67 * (10 ** (-11))
@@ -33,13 +33,19 @@ while f_mass > 0:
     y_speed = r_speed * math.sin(3.14 / (180 / s_angle));
     x += x_speed * d_t
     y += y_speed * d_t
-    if(time.perf_counter() - tm >= 1):
+    if time.perf_counter() - tm >= 1:
         print("coord= ",x, y)
         print("speed_x= ", x_speed , "speed_y= ", y_speed);
         print("mod speed = ", r_speed)
         print("fuel mass = ", f_mass)
         print()
         print()
-        tm= time.perf_counter()
+        tm = time.perf_counter()
     canvas.create_oval(s_f - x / 40,s_f - y / 40,s_f - x / 40,s_f  - y / 40, fill='green')
     root.update()
+
+#30
+#33000
+#270000
+#4000
+#800
